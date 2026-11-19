@@ -5,6 +5,8 @@ import { HealthModule } from './modules/health/health.module.js';
 import { ConfigModule } from '@nestjs/config';
 import { validate } from './config/env.validation.js';
 import { ImagesModule } from './modules/images/images.module.js';
+import { StorageModule } from './modules/storage/storage.module.js';
+import { PrismaModule } from './prisma/prisma.module.js';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { ImagesModule } from './modules/images/images.module.js';
     }),
     HealthModule,
     ImagesModule,
+    StorageModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
