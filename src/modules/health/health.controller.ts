@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { HealthService } from './health.service.js';
 
 @Controller({
@@ -6,10 +6,10 @@ import { HealthService } from './health.service.js';
   version: '1',
 })
 export class HealthController {
-  constructor(private readonly healthSerivce: HealthService) {}
+  constructor(private readonly healthService: HealthService) {}
 
   @Get()
   getHealth() {
-    return this.healthSerivce.getHealth();
+    return this.healthService.getHealth();
   }
 }
