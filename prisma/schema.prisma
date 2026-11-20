@@ -16,7 +16,7 @@ datasource db {
 model Image {
   id           String   @id @db.Uuid
   originalKey  String
-  processedKey String
+  processedKey String?
   format       String
   createdAt    DateTime @default(now())
 
